@@ -1,0 +1,2 @@
+This is a test file, using EGit from Eclipse Environment.
+We may eventually add more documents here.
