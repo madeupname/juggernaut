@@ -1,15 +1,24 @@
 package ocjug.juggernaut
 
+/**
+ * Meeting location. It is currently US-centric.
+ * 
+ * TODO: i18n to support provinces, postal codes
+ * 
+ * @author Philip Yurchuk
+ *
+ */
 class Location {
 	
 	static constraints = {
-		name blank: false
+		// Name is displayed in the Location option menu when creating a Meeting, so make unique to avoid confusion
+		name blank: false, unique: true 
 		link url: true
 		street blank: false
 		unit()
 		city blank: false
 		state blank: false, minSize: 2, maxSize: 2
-		postalCode()
+		zipCode()
 	}
 	
 	String name
@@ -18,7 +27,7 @@ class Location {
 	String unit
 	String city
 	String state
-	String postalCode
+	String zipCode
 	
 	String toString() {
 		name
