@@ -13,12 +13,12 @@ class Location {
 	static constraints = {
 		// Name is displayed in the Location option menu when creating a Meeting, so make unique to avoid confusion
 		name blank: false, unique: true 
-		link url: true, nullable: true
+		link url: true
 		street blank: false
-		unit nullable: true
+		unit()
 		city blank: false
 		state blank: false, minSize: 2, maxSize: 2
-		zipCode nullable: true
+		zipCode()
 	}
 	
 	String name
