@@ -91,3 +91,29 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'ocjug.juggernaut.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'ocjug.juggernaut.UserRole'
+grails.plugins.springsecurity.authority.className = 'ocjug.juggernaut.Role'
+
+// Secure by request path
+// Note that with this setting, security annotations in controllers are IGNORED
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugins.springsecurity.interceptUrlMap = [
+	// These controllers are automatically made available by spring-security-ui plugin; lock them down
+	'/acl*/**': ['ROLE_ADMIN'],
+	'/persistentLogin/**': ['ROLE_ADMIN'],
+	'/registrationCode/**': ['ROLE_ADMIN'],
+	'/requestmap/**': ['ROLE_ADMIN'],
+	'/role/**': ['ROLE_ADMIN'],
+	'/securityInfo/**': ['ROLE_ADMIN'],
+	'/user/**': ['ROLE_ADMIN'],
+	// Restrict admin functions, make the rest open
+	'/meeting/list': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/meeting/index': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/meeting/show/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/meeting/**': ['ROLE_ADMIN'],
+	'/location/show/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/location/**': ['ROLE_ADMIN']
+]
