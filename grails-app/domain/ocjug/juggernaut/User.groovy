@@ -17,7 +17,7 @@ class User {
 	}
 
 	static mapping = {
-		password column: '`password`'
+		table 'person' // user is a reserved word in many DBs
 	}
 
 	Set<Role> getAuthorities() {
