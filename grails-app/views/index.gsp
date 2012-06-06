@@ -18,18 +18,6 @@
 					<g:link class="btn btn-primary btn-large" controller="meeting" action="show" id="${meeting?.id}">More Details &raquo;</g:link>
 				</p>
 			</div>
-			<p>request.contextPath = ${request.contextPath}</p>
-			<p>request.pathTranslated = ${request.getPathTranslated()}</p>
-			<p>request.requestURI = ${request.requestURI}</p>
-			<p>request.requestURL = ${request.requestURL}</p>
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
 		</div>  <!-- /container -->
 	</body>
 </html>
