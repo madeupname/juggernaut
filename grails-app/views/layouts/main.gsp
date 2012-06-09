@@ -12,8 +12,6 @@
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<%--<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">--%>
 		<r:require modules="custom-bootstrap"/>
 		<g:layoutHead/>
         <r:layoutResources />
@@ -32,9 +30,9 @@
 							<g:link class="brand" controller="index" style="background: url(${resource(dir: 'images', file: 'ocjug-logo-sm.png')}) center no-repeat;">Orange County Java User Group</g:link>
 							<div class="nav-collapse">
 								<ul class="nav nav-pills">
-									<li class="active"><a href="#">Home</a></li>
+									<li class="active"><g:link controller="index">Home</g:link></li>
 									<li><a href="#about">About</a></li>
-									<li><a href="#meet">Meetings</a></li>
+									<li><g:link controller="meeting" action="list">Meetings</g:link></li>
 									<li><a href="#present">Presentations</a></li>
 									<li><a href="#register">Register</a></li>
 									<li><a href="#contact">Contact</a></li>
@@ -47,7 +45,10 @@
 			</div>
 		</div>
 
-	<g:layoutBody/>
+		<div class="container">
+			<g:layoutBody/>
+		</div>
+	
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
