@@ -23,7 +23,7 @@
 		<g:message code="meeting.description.label" default="Description" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="description" cols="40" rows="5" required="" value="${meetingInstance?.description}"/>
+	<g:textArea class="span8" name="description" cols="80" rows="8" required="" value="${meetingInstance?.description}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: meetingInstance, field: 'meetingDate', 'error')} required">
@@ -39,7 +39,8 @@
 		<g:message code="meeting.startTime.label" default="Start Time" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="startTime" pattern="${meetingInstance.constraints.startTime.matches}" required="" value="${meetingInstance?.startTime}"/>
+	<g:textField name="startTime" id="startTime" pattern="${meetingInstance.constraints.startTime.matches}" required="" value="${meetingInstance?.startTime}"/>
+	
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: meetingInstance, field: 'endTime', 'error')} required">
@@ -47,7 +48,7 @@
 		<g:message code="meeting.endTime.label" default="End Time" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="endTime" pattern="${meetingInstance.constraints.endTime.matches}" required="" value="${meetingInstance?.endTime}"/>
+	<g:textField name="endTime" id="endTime" pattern="${meetingInstance.constraints.endTime.matches}" required="" value="${meetingInstance?.endTime}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: meetingInstance, field: 'location', 'error')} required">

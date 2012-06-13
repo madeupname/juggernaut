@@ -5,6 +5,7 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'meeting.label', default: 'Meeting')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<r:require modules="perifer-timepicker"/>
 	</head>
 	<body>
 		<a href="#create-meeting" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

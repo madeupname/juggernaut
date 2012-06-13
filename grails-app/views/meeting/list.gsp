@@ -29,6 +29,8 @@
 						<g:sortableColumn property="startTime" title="${message(code: 'meeting.startTime.label', default: 'Start Time')}" />
 					
 						<g:sortableColumn property="endTime" title="${message(code: 'meeting.endTime.label', default: 'End Time')}" />
+						
+						<td><strong>Calendar</strong></td>
 					
 					</tr>
 				</thead>
@@ -39,14 +41,17 @@
 						<td><g:link action="show" id="${meetingInstance.id}">${fieldValue(bean: meetingInstance, field: "title")}</g:link></td>
 					
 						<td>${fieldValue(bean: meetingInstance, field: "speaker")}</td>
+						
+						<%-- Show the first 30 characters of the description --%>
+						<td>${fieldValue(bean: meetingInstance, field: "description").substring(0, meetingInstance?.description.length() < 30 ? meetingInstance?.description.length() : 30) + "..."}</td>
 					
-						<td>${fieldValue(bean: meetingInstance, field: "description")}</td>
-					
-						<td><g:formatDate date="${meetingInstance.meetingDate}" /></td>
+						<td><g:formatDate date="${meetingInstance.meetingDate}" format="yyyy-M-d"/></td>
 					
 						<td>${fieldValue(bean: meetingInstance, field: "startTime")}</td>
 					
 						<td>${fieldValue(bean: meetingInstance, field: "endTime")}</td>
+						
+						<td><g:link action="icalendar" id="${meetingInstance.id}">Add To My Calendar</g:link>
 					
 					</tr>
 				</g:each>

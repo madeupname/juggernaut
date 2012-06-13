@@ -24,4 +24,9 @@ modules = {
 		dependsOn 'bootstrap-js'
 		resource url:[dir: 'twitter-bootstrap/less', file: 'custom-bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css']
 	}
+	
+	'perifer-timepicker' {
+		resource url:'perifer-timepicker/jquery.timePicker.js'
+		resource url:'perifer-timepicker/timePicker.css'
+	}
 }
