@@ -21,6 +21,9 @@ class Location {
 		zipCode nullable: true
 	}
 	
+	// Set this in BootStrap.groovy
+	static String defaultTimeZone = 'America/Los_Angeles'
+	
 	String name
 	String link
 	String street
@@ -29,7 +32,13 @@ class Location {
 	String state
 	String zipCode
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 * 
+	 * Formats location on a single line, including ZIP code if it was set
+	 */
 	String toString() {
-		name
+		def loc = "$name, $street, Unit $unit, $city, $state"
+		zipCode? loc + ", " + zipCode : loc  
 	}
 }

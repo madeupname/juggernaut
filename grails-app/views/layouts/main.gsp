@@ -1,25 +1,54 @@
 <!doctype html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
+	    <meta charset="utf-8">
+		<title><g:layoutTitle default="Orange County Java User Group"/></title>
+		<%--<link href='http://fonts.googleapis.com/css?family=Neuton:200,400,700,800,400italic' rel='stylesheet' type='text/css'> --%>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	    <!--[if lt IE 9]>
+	      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+		<r:require modules="custom-bootstrap"/>
 		<g:layoutHead/>
         <r:layoutResources />
-	</head>
+        </head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
-		<g:layoutBody/>
+		
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="row-fluid">
+						<div class="span12">
+							<a class="btn btn-navbar" data-toggle="collapse"
+								data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span>
+							</a> 
+							<g:link class="brand" controller="index" style="background: url(${resource(dir: 'images', file: 'ocjug-logo-sm.png')}) center no-repeat;">Orange County Java User Group</g:link>
+							<div class="nav-collapse">
+								<ul class="nav nav-pills">
+									<li class="active"><g:link controller="index">Home</g:link></li>
+									<li><a href="#about">About</a></li>
+									<li><g:link controller="meeting" action="list">Meetings</g:link></li>
+									<li><a href="#present">Presentations</a></li>
+									<li><a href="#register">Register</a></li>
+									<li><a href="#contact">Contact</a></li>
+								</ul>
+							</div>
+							<!--/.nav-collapse -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<g:layoutBody/>
+		</div>
+	
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>

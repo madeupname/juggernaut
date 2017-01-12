@@ -7,6 +7,7 @@ import ocjug.juggernaut.UserRole
 class BootStrap {
 
     def init = { servletContext ->
+		Location.defaultTimeZone = 'America/Los_Angeles'
 		environments {
 			development {
 				// Create test user with admin role
@@ -28,7 +29,7 @@ class BootStrap {
 				//assert location.id != null
 				
 				Meeting meeting = new Meeting(title: "Fun with Grails!", speaker: "John Doe", description: "Learn Grails", 
-					meetingDate: new Date(), startTime: "6:30", endTime: "8:30", location: location)
+					meetingDate: new Date(), startTime: "6:30 PM", endTime: "8:30 PM", location: location)
 				meeting.save(flush: true, failOnError: true)
 				assert Meeting.count() == 1
 				assert Location.count() == 1

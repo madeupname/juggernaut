@@ -1,0 +1,68 @@
+@import "bootstrap.less";
+
+body {
+  // padding-top: 122px;
+  padding-bottom: 40px;
+}
+
+@import "responsive.less";
+
+// variables.less
+@orange: #E57025;
+@linkColor: #3969B2;
+@baseFontSize:          16px;
+
+// scaffolding.less
+
+// navs.less
+
+.nav-pills > li > a {
+  margin-bottom: 18px;
+}
+
+// navbar.less
+
+.nav-collapse {
+	margin-top: 44px;
+}
+.navbar-inner {
+  background-color: white;
+  background-image: none;
+  filter: -;
+}
+
+.btn-navbar {
+  background-color: @orange;
+  @navbarBackground:                #CE6521;
+  @navbarBackgroundHighlight:       #E87E3B;
+  .buttonBackground(@navbarBackground, @navbarBackgroundHighlight);
+  // background-image: -moz-linear-gradient(top, #CE6521, #E87E3B);
+  //background-image: -ms-linear-gradient(top, #CE6521, #E87E3B);
+  //background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#CE6521), to(#E87E3B));
+  //background-image: -webkit-linear-gradient(top, #CE6521, #E87E3B);
+  //background-image: -o-linear-gradient(top, #CE6521, #E87E3B);
+  //background-image: linear-gradient(top, #CE6521, #E87E3B);
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CE6521', endColorstr='#E87E3B', GradientType=0);
+  //border-color: #E87E3B #E87E3B @orange;
+}
+
+.navbar .brand {
+  height: 82px;
+  width: 300px;
+  text-indent: -9999px; 
+  font-size: 1px;
+}
+
+.navbar .nav > li > a {
+  color: white;
+  background-color: #3969B2;
+}
+.navbar .nav > li > a:hover {
+  background-color: @orange;
+}
+.navbar .nav .active > a, .navbar .nav .active > a:hover {
+  background-color: @orange;
+}
+
+
+

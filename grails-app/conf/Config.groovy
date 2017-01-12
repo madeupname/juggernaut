@@ -6,6 +6,9 @@
 //                             "file:${userHome}/.grails/${appName}-config.properties",
 //                             "file:${userHome}/.grails/${appName}-config.groovy"]
 
+// Store local config info like DB connection properties here
+grails.config.locations = ["file:${userHome}/.grails/${appName}-config.groovy"]
+
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
@@ -113,7 +116,10 @@ grails.plugins.springsecurity.interceptUrlMap = [
 	'/meeting/list': ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/meeting/index': ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/meeting/show/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/meeting/icalendar/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/meeting/**': ['ROLE_ADMIN'],
 	'/location/show/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/location/**': ['ROLE_ADMIN']
 ]
+
+
